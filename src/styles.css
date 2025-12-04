@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles for the application */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+router-outlet ~ * {
+  margin-top: auto;
+}
+
+/* Ensure proper spacing for main content */
+main, [role="main"] {
+  flex: 1;
+}
+
+/* Card and component spacing */
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image responsive styling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

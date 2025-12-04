@@ -1,0 +1,16 @@
+<div class="row product-grid">
+  <div class="col-md-4" *ngFor="let candel of candels; index as i">
+    
+    <div class="product-card">
+      <img [src]="candel.image" alt="{{ candel.title }}" />
+
+      <h4 class="product-title">{{ candel.title }}</h4>
+
+      <div class="product-info">
+        <span class="price">{{ candel.price }} EGP</span>
+        <span class="rating">⭐ {{ candel.rating.rate }}</span>
+      </div>
+    </div>
+
+  </div>
+</div>

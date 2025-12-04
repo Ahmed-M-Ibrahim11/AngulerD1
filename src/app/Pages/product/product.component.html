@@ -1,0 +1,20 @@
+<div class="container my-5">
+  <h1 class="text-center">Products</h1>
+
+  <div class="row g-4">
+    <div class="col-12" *ngFor="let product of products; trackBy: trackById">
+      <app-product-card [product]="product" (select)="onSelectProduct($event)"></app-product-card>
+    </div>
+  </div>
+
+</div>
+<div class="container my-5">
+  <h1 class="text-center">Products</h1>
+
+  <div class="row g-4">
+    <div class="col-12" *ngFor="let product of products; trackBy: trackById">
+      <app-product-card [product]="product" (select)="onSelectProduct($event)"></app-product-card>
+    </div>
+  </div>
+
+</div>

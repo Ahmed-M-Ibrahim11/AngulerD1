@@ -1,0 +1,50 @@
+<div class="w-75 mx-auto py-5">
+  <form [formGroup]="userform" (ngSubmit)="submitForm()">
+    <h2 class="mb-4">Log In</h2>
+
+<!-- 
+    @if(userform.get('email')?.errors && userform.get('email')?.touched){
+        <div class="alert alert-danger">
+            @if(userform.get('email')?.hasError('requierd')){
+                <div class="mb-0"> email is required  </div> }
+              @else if (userform.get('emial')?.hasError('email')){
+                <div class="mb-0">
+                 email not valid
+            </div> }
+        </div>
+    } -->
+    <!-- Email Field -->
+    <div class="mb-3">
+      <label for="email" >Email</label>
+      <input type="email"  class="form-control"  formControlName="email" id="email"
+       [class.is-invalid]="f['email'].touched && f['email'].invalid">
+      <small class="text-danger" *ngIf="f['email'].touched && f['email'].invalid">
+        * Email is required and must be valid
+      </small>
+    </div>
+
+    <!-- Password Field -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input 
+        type="password" 
+        class="form-control" 
+        formControlName="password" 
+        id="password"
+        [class.is-invalid]="f['password'].touched && f['password'].invalid"
+      >
+      <small class="text-danger" *ngIf="f['password'].touched && f['password'].invalid">
+        * Password is required (min 6 characters)
+      </small>
+    </div>
+
+    <!-- Submit Button -->
+    <button 
+      type="submit" 
+      class="btn btn-primary w-100"
+      [disabled]="userform.invalid"
+    >
+      Log In
+    </button>
+  </form>
+</div>
